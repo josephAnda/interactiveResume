@@ -1,26 +1,5 @@
-var name = "Joseph Anda"
-var role = "Front End Developer"
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-var formattedName = HTMLheaderName.replace("%data%", name);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-var skills = ["Javascript", "Ruby", "C++", "HTML/CSS", "Mechanical Design", "Machine Shop", "Teaching" ];
-var welcomeMessage = "Welcome to my bio!";
-var pictureURL = "http://andadps.com";
-var contactInfo = { 	 
-		"location" : "San Mateo, CA",
-		"email" : "orenmurasaki@gmail.com",
-		"mobile" : "501-240-8654",
-		"github" : "githubcom/josephAnda"
-	};
-var bio = {
-	"name" : name,
-	"role" : role,
-	"skills" : skills,
-	"url" : pictureURL,
-	"welcome" : welcomeMessage,
-	"contactInfo" : contactInfo
-};
+
+//Version 2.0.1  
 var contactInfo = { 	 
 		"location" : "San Mateo, CA",
 		"email" : "orenmurasaki@gmail.com",
@@ -38,7 +17,19 @@ contactInfo.display = function() {
 	$("#footerContacts").append(formattedContactGithub);
 };
 contactInfo.display();
+var bio = {
+	"name" : "Joseph Anda",
+	"role" : "Front End Developer",
+	"skills" : ["Javascript", "Ruby", "C++", "HTML/CSS", "Mechanical Design", "Machine Shop", "Teaching" ],
+	"url" : "http://andadps.com",
+	"welcome" : "Welcome to my bio!",
+	"contactInfo" : contactInfo
+};
 bio.display = function() {
+	formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedRole);
+	formattedName = HTMLheaderName.replace("%data%", bio.name);
+	$("#header").prepend(formattedName);
 	//adds an image to the profile
 	var img = document.createElement("img");
 	img.src = "images/propic2.jpg";
@@ -163,7 +154,7 @@ work.display = function() {
 };
 work.display();
 var projects = {
-	"projects" : [ 
+	"projects" : [ 		
 		{ 
 			"title" : "Longboard Brake",
 			"date" : "June 2011",
@@ -176,6 +167,12 @@ var projects = {
 			"date" : "March 2015", 
 			"description" : "This resume is intended to showcase a multitude of front-end development skills.  The features of this page will accrue as I progress.",
 			"images" : [ "https://developer.chrome.com/extensions/examples/api/idle/idle_simple/sample-128.png", "http://placehold.it/135x135" ]
+		},
+		{
+			"title" : "Neighborhood Mapper",
+			"date" : "October 2015",
+			"description" : "This single-page app is one of my first fully-functional applications, featuring several APIs.",
+			"images" : [ "http://placehold.it/135x135" ]
 		}
 	]
 };
